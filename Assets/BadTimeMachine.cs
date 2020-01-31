@@ -20,6 +20,8 @@ public class BadTimeMachine : MonoBehaviour
     public bool forwardsInTime;
     public bool backwardsInTime;
 
+    bool recordCube = true;
+
     public List<TimeStep> timeLine;
     
     // Start is called before the first frame update
@@ -31,7 +33,7 @@ public class BadTimeMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
+        /*if (Input.GetKey(KeyCode.R))
         {
             forwardsInTime = false;
             backwardsInTime = true;
@@ -41,20 +43,26 @@ public class BadTimeMachine : MonoBehaviour
         {
             forwardsInTime = true;
             backwardsInTime = false;
-        }
+        }*/
     }
 
     void FixedUpdate()
     {
-        if (forwardsInTime)
+        if (recordCube)
         {
-            timeLine.Add((new TimeStep( gameObject.transform.position , gameObject.transform.rotation )));
-        } else if (backwardsInTime && timeLine.Count > 0)
+            timeLine.Add((new TimeStep( gameObject.transform.position, gameObject.transform.rotation )));
+        }
+    }
+
+    public void RewindFixedTimeFrame()
+    {
+        recordCube = false;
+        if (timeLine.Count > 0)
         {
             var lastStep = timeLine[timeLine.Count - 1];
             transform.position = lastStep.position;
             transform.rotation = lastStep.rotation;
-            timeLine.RemoveAt(timeLine.Count-1);
-        }
+            timeLine.RemoveAt(timeLine.Count - 1);
+        } 
     }
 }
