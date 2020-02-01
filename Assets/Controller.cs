@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UnityEditor;
 
@@ -16,7 +17,8 @@ public class Controller : MonoBehaviour
     public Color playerColor;
 
     [Header("Refs")]
-    public BTMProjectile projectile;
+    public GameObject projectilePrefab;
+    //public BTMProjectile projectile;
     public Transform cameraTarget;
 
     private Rigidbody _body;
@@ -42,9 +44,10 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown($"Fire{playerNumber}") && !projectile.gameObject.activeInHierarchy) {
-            projectile.gameObject.SetActive(true);
-            projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
+        //if (Input.GetButtonDown($"Fire{playerNumber}") && !projectile.gameObject.activeInHierarchy) {
+        if (Input.GetButtonDown($"Fire{playerNumber}"))
+        {
+            FireProjectile();
         }
 
         float x = Input.GetAxis($"Horizontal{playerNumber}") * speed;
@@ -64,6 +67,14 @@ public class Controller : MonoBehaviour
             
         velocity = _body.rotation * velocity;
         _body.AddForce(velocity * 5);        
+    }
+
+    void FireProjectile()
+    {
+        GameObject projectileGO = Instantiate(projectilePrefab);
+        BTMProjectile projectile = projectileGO.GetComponent<BTMProjectile>();
+        projectile.gameObject.SetActive(true);
+        projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
     }
 }
 

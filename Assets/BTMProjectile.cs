@@ -40,12 +40,11 @@ public class BTMProjectile : MonoBehaviour
         lifetime -= Time.deltaTime;
 
         if (lifetime < 0)
-            gameObject.SetActive(false);
+            Destroy(gameObject);
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger!");
         Explosion explosion = other.gameObject.GetComponent<Explosion>();
         if(explosion != null)
         {
