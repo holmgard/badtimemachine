@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class RewindablesManager : MonoBehaviour
 {
+    private static RewindablesManager _instance;
+    public static RewindablesManager Instance {
+        get {
+            return _instance;
+        }
+    }
+
     public GameObject RewindableObjectParent;
 
     private Dictionary<int, BadTimeMachine> rewindableObjects = new Dictionary<int, BadTimeMachine>();
+
+    void Awake() {
+        _instance = this;
+    }
 
     private void Start()
     {

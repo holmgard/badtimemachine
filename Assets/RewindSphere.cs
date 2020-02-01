@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RewindSphere : MonoBehaviour
 {
-    public RewindablesManager rewindablesManager;
+    public float radius = 5.0F;
+    private RewindablesManager rewindablesManager;
 
+    void Start() {
+        rewindablesManager = RewindablesManager.Instance;
+    }
     void FixedUpdate()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5.0F, 0x0100); // 0x0100 Stands for layer 8
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, 0x0100); // 0x0100 Stands for layer 8
 
         foreach (var collider in colliders)
         {
