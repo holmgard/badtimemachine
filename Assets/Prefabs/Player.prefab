@@ -123,6 +123,9 @@ MonoBehaviour:
   lowerBound: -0.39
   upperBound: 2.04
   target: {fileID: 727619146}
+  crosshairsSprite: {fileID: 21300000, guid: 431cc9718037349e8ad5fada21030995, type: 3}
+  crosshairWidth: 40
+  crosshairHeight: 40
   cameraPercPos: 0
 --- !u!1 &9174845707423994870
 GameObject:

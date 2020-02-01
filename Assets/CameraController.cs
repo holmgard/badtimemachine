@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,11 @@ public class CameraController : MonoBehaviour
 
     public Transform target;
 
+    [Header("Crosshairs")]
+    public Sprite crosshairsSprite;
+    public int crosshairWidth = 40;
+    public int crosshairHeight = 40;
+    
     [Header("Debug")]
     public float cameraPercPos;
 
@@ -24,6 +30,8 @@ public class CameraController : MonoBehaviour
     private float _heightExtent;
     private float _distanceExtent;
 
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -50,4 +58,18 @@ public class CameraController : MonoBehaviour
         transform.localPosition = newPos;
         transform.LookAt(target);
     }
+
+    private void OnGUI()
+    {
+        DrawCrosshair();
+    }
+
+    void DrawCrosshair()
+    {
+        Vector3 screenPos = _camera.WorldToScreenPoint(target.position);
+        screenPos.y = Screen.height - screenPos.y;
+        GUI.DrawTexture(new Rect(screenPos.x, screenPos.y, crosshairWidth, crosshairHeight), crosshairsSprite.texture);    
+    }
+
+    
 }

@@ -1260,6 +1260,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairsSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 431cc9718037349e8ad5fada21030995,
+        type: 3}
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairWidth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairHeight
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5713682723180355064, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
       propertyPath: m_Enabled
@@ -1354,6 +1370,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairsSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 431cc9718037349e8ad5fada21030995,
+        type: 3}
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairWidth
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 315355144511357225, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: crosshairHeight
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5713682723180355064, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
       propertyPath: m_Enabled
