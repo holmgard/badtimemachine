@@ -6,11 +6,16 @@ using UnityEditor;
 [RequireComponent(typeof(Rigidbody))]
 public class Controller : MonoBehaviour
 {
-    public int playerNumber;
+    [Header("Control params")]
     public float speed;
     public float rotSpeed;
 
+    [Header("Player info")]
+    public int playerNumber;
+    public Color playerColor;
+
     private Rigidbody _body;
+    private Renderer _renderer;
 
     void Awake() {
         _body = GetComponent<Rigidbody>();
@@ -19,6 +24,9 @@ public class Controller : MonoBehaviour
     void Start()
     {
         rotation = transform.localRotation;
+
+        _renderer = GetComponent<Renderer>();
+        _renderer.material.color = playerColor;
     }
 
     [Header("Debug")]
