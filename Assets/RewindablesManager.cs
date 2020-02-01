@@ -21,13 +21,11 @@ public class RewindablesManager : MonoBehaviour
 
     private void Start()
     {
-        foreach(Transform child in RewindableObjectParent.transform)
+        var components = RewindableObjectParent.GetComponentsInChildren<BadTimeMachine>();
+        foreach(var component in components)
         {
-            BadTimeMachine badTimeMachine = child.gameObject.GetComponent<BadTimeMachine>();
-            if(badTimeMachine != null)
-            {
-                rewindableObjects.Add(child.gameObject.GetInstanceID(), badTimeMachine);
-            }
+            int id = component.gameObject.GetInstanceID();
+            rewindableObjects.Add(id, component);
         }
     }
 
