@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c1924fe-d62d-4947-9e18-1d63d50ede12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Explosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Explosion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +23,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/BadTimeMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
       </list>
     </option>
   </component>
@@ -73,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580502182819</updated>
       <workItem from="1580502187175" duration="2723000" />
-      <workItem from="1580508579797" duration="1981000" />
+      <workItem from="1580508579797" duration="2364000" />
     </task>
     <servers />
   </component>
