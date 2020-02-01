@@ -20,6 +20,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AmISleepingTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RewindSphere.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BadTimeMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RewindablesManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -29,10 +30,11 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/BadTimeMachine.cs" />
         <option value="$PROJECT_DIR$/Assets/AmISleepingTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/Controller.cs" />
         <option value="$PROJECT_DIR$/Assets/BTMProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/AudioManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
       </list>
     </option>
   </component>
@@ -82,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580502182819</updated>
       <workItem from="1580502187175" duration="2723000" />
-      <workItem from="1580508579797" duration="9756000" />
+      <workItem from="1580508579797" duration="10826000" />
     </task>
     <servers />
   </component>
