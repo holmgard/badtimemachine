@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class RewindSphere : MonoBehaviour
 {
+    public RewindablesManager rewindablesManager;
+
     void FixedUpdate()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5.0F); // TODO layermask cubes for performance (different overload)
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 5.0F, 0x0100); // 0x0100 Stands for layer 8
 
         foreach (var collider in colliders)
         {
-            BadTimeMachine badTimeMachine = collider.gameObject.GetComponent<BadTimeMachine>();
-            if(badTimeMachine != null)
-            {
-                Debug.Log("Rewinding");
-                badTimeMachine.RewindFixedTimeFrame();
-            }
+            int temp = collider.gameObject.GetInstanceID();
+            BadTimeMachine badTimeMachine = rewindablesManager.GetBadTimeMachine(temp);
+            badTimeMachine.RewindFixedTimeFrame();
         }
     }
 }
