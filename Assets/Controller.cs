@@ -31,21 +31,23 @@ public class Controller : MonoBehaviour
 
     [Header("Debug")]
     public Vector3 velocity;
-    public float cameraIn;
+    public float cameraX;
     public Quaternion rotation;
     // Update is called once per frame
     void Update()
     {
+        float x = Input.GetAxis($"Horizontal{playerNumber}") * speed;
         float y = Input.GetAxis($"Vertical{playerNumber}") * speed;
         velocity = new Vector3(
-            0,
+            x,
             0,
             y
         ) * speed;
 
-        cameraIn = Input.GetAxis($"Horizontal{playerNumber}");
-        if (Mathf.Abs(cameraIn) > 0.11) {
-            rotation = Quaternion.Euler(0, cameraIn * rotSpeed, 0);
+        cameraX = Input.GetAxis($"CameraHor{playerNumber}");
+        // if (Mathf.Abs(cameraIn) > 0.11)
+        {
+            rotation = Quaternion.Euler(0, cameraX * rotSpeed, 0);
             _body.rotation *= rotation;
         }
             
