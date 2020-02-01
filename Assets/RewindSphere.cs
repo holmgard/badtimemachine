@@ -12,11 +12,11 @@ public class RewindSphere : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("Rewind"))
         {
             rewinding = true;
         }
-        else if (Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetButtonUp("Rewind"))
         {
             rewinding = false;
             foreach (var rewindAffectedCube in rewindAffectedCubes)
