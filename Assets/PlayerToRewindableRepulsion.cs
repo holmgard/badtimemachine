@@ -28,6 +28,7 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
             float collisionSpeed = collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude + 5F;
             playerRigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
             playerRigidbody.AddForce(repulsiveForce * collisionSpeed * 4F, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(-repulsiveForce * collisionSpeed);
             playerRigidbody.constraints &= ~(RigidbodyConstraints.FreezeRotationY);
         }
     }
