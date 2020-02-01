@@ -18,6 +18,19 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
+    public float GetPlayerScore(int playerNumber)
+    {
+        switch (playerNumber)
+        {
+            case 1:
+                return player1Score;
+            case 2:
+                return player2Score;
+            default:
+                return 1;
+        }
+    }
+
     void Update()
     {
         int player1Boxes = 0;

@@ -878,6 +878,20 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6482330738446624950, guid: 988d11136b3ed4bdba7a996bf586cda2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 988d11136b3ed4bdba7a996bf586cda2, type: 3}
+--- !u!1 &159434343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9174845705727362323, guid: 8b006394dd492a64794750f9f061db77,
+    type: 3}
+  m_PrefabInstance: {fileID: 501889885}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &159434347
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159434343}
+  m_Enabled: 1
 --- !u!1 &167326255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewindablesManager: {fileID: 967514624}
+  playerNumber: 0
 --- !u!4 &444570504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9174845707423994864, guid: 8b006394dd492a64794750f9f061db77,
@@ -1707,7 +1722,12 @@ PrefabInstance:
     - target: {fileID: 9174845707423994871, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
       propertyPath: speed
-      value: 20
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174845707423994871, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: rotSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b006394dd492a64794750f9f061db77, type: 3}
@@ -1907,6 +1927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playerColor.b
       value: 0.12941174
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174845707423994871, guid: 8b006394dd492a64794750f9f061db77,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b006394dd492a64794750f9f061db77, type: 3}
@@ -3149,8 +3174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAudioSource: {fileID: 1036299572}
-  blocksForward: {fileID: 8300000, guid: c9972343bbbb24c7892cac14c397c687, type: 3}
-  blocksBackwards: {fileID: 8300000, guid: 43fd7de89ed6648c8ba6207dc17bdb7a, type: 3}
+  blocksForward: {fileID: 8300000, guid: 4f567fa0eb10247eeb9998f516c9e305, type: 3}
+  blocksBackwards: {fileID: 8300000, guid: 9bdaac126be9d425aa2d9c2698008f8c, type: 3}
 --- !u!82 &1036299572
 AudioSource:
   m_ObjectHideFlags: 0

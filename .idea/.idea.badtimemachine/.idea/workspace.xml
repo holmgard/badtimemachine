@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c1924fe-d62d-4947-9e18-1d63d50ede12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.badtimemachine/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Translucent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Translucent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerToRewindableRepulsion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerToRewindableRepulsion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/RewindSphere.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/RewindSphere.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/ArenaTest1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ArenaTest1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScoreManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScoreManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BTMProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScoreCube.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PlayerToRewindableRepulsion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AmISleepingTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -40,7 +42,10 @@
         <option value="$PROJECT_DIR$/Assets/AudioManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/ScoreCube.cs" />
+        <option value="$PROJECT_DIR$/Assets/RewindablesManager.cs" />
         <option value="$PROJECT_DIR$/Assets/ScoreManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerToRewindableRepulsion.cs" />
+        <option value="$PROJECT_DIR$/Assets/RewindSphere.cs" />
       </list>
     </option>
   </component>
@@ -91,7 +96,7 @@
       <updated>1580502182819</updated>
       <workItem from="1580502187175" duration="2723000" />
       <workItem from="1580508579797" duration="14156000" />
-      <workItem from="1580582084315" duration="1188000" />
+      <workItem from="1580582084315" duration="2308000" />
     </task>
     <servers />
   </component>

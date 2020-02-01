@@ -17,6 +17,7 @@ public class RewindSphere : MonoBehaviour
         if (Input.GetButtonDown($"Rewind{playerNumber}"))
         {
             rewinding = true;
+            AudioManager.Instance.SoundEffect(AudioManager.SoundEffects.BlocksBackward);
         }
         else if (Input.GetButtonUp($"Rewind{playerNumber}"))
         {

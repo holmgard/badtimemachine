@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +7,16 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
 {
     Rigidbody playerRigidbody;
     public RewindablesManager rewindablesManager;
-
+    public int playerNumber;
+    
     private void Awake()
     {
         playerRigidbody = gameObject.GetComponent<Rigidbody>();
+    }
+
+    private void Start()
+    {
+        playerNumber = GetComponent<Controller>().playerNumber;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -27,6 +34,9 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
             repulsiveForce.y = 0.0F;
             float collisionSpeed = collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude + 5F;
             playerRigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
+
+            float repulsionModifier = 4f * ScoreManager.Instance.GetPlayerScore(playerNumber);
+            
             playerRigidbody.AddForce(repulsiveForce * collisionSpeed * 4F, ForceMode.Impulse);
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-repulsiveForce * collisionSpeed);
             playerRigidbody.constraints &= ~(RigidbodyConstraints.FreezeRotationY);
