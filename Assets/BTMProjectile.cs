@@ -25,7 +25,7 @@ public class BTMProjectile : MonoBehaviour
 
         direction = dir.normalized;
 
-        transform.position = pos;
+        transform.position = pos + direction * 1.3f;
 
         //_btm.forwardsInTime = forward;
         //_btm.backwardsInTime = !forward;

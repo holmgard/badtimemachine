@@ -7,26 +7,29 @@ public class Explosion : MonoBehaviour
 {
     public Transform explosionSource;
     public Rigidbody myRigidbody;
+    public float explosionForce = 1000f;
+    public float explosionRadius = 500f;
+    public float upwardsModifier = 5f;
     
-
     void Start()
     {
+        explosionSource = transform;
         myRigidbody = GetComponent<Rigidbody>();
     }
 
     public void Explode()
     {
-        myRigidbody.AddExplosionForce(5000.0f, explosionSource.position, 500.0f, 5.0f);
+        myRigidbody.AddExplosionForce(explosionForce, explosionSource.position, explosionRadius, upwardsModifier);
         AudioManager.Instance.SoundEffect(AudioManager.SoundEffects.BlocksForward);
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
                 //Debug.Log("Exploding!");
                 Explode();
         }
-    }
+    }*/
 }

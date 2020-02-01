@@ -159,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 9174845707423994870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0725603, y: 1.96, z: 11.643948}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 9174845705727362334}
   - {fileID: 727619146}
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewindablesManager: {fileID: 0}
+  playerNumber: 0
 --- !u!114 &8845709232493625575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,4 +290,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f622b2fca80b83542b68cab3888903cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sphereRadius: 5
+  sphereRadius: 10

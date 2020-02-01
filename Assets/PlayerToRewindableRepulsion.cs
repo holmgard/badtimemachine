@@ -19,8 +19,27 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
         playerNumber = GetComponent<Controller>().playerNumber;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
+        if (collision.gameObject.GetComponent<BTMProjectile>() != null)
+        {
+            Vector3 averageContact = collision.gameObject.transform.position;
+
+            Vector3 repulsiveForce = transform.position - averageContact;
+            repulsiveForce.y = 0.0F;
+            float collisionSpeed = collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude + 5F;
+            playerRigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
+
+            float repulsionModifier = (1 - ScoreManager.Instance.GetPlayerScore(playerNumber)) * 2f;
+
+            playerRigidbody.AddForce(repulsiveForce * collisionSpeed * repulsionModifier, ForceMode.Impulse);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(-repulsiveForce * collisionSpeed);
+            playerRigidbody.constraints &= ~(RigidbodyConstraints.FreezeRotationY);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+        {
         if (rewindablesManager.IsRewindable(collision.gameObject.GetInstanceID()))
         {
             Vector3 averageContact = Vector3.zero;
@@ -35,9 +54,9 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
             float collisionSpeed = collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude + 5F;
             playerRigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
 
-            float repulsionModifier = 4f * ScoreManager.Instance.GetPlayerScore(playerNumber);
+            float repulsionModifier = (1 - ScoreManager.Instance.GetPlayerScore(playerNumber)) * 4F;
             
-            playerRigidbody.AddForce(repulsiveForce * collisionSpeed * 4F, ForceMode.Impulse);
+            playerRigidbody.AddForce(repulsiveForce * collisionSpeed * repulsionModifier, ForceMode.Impulse);
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-repulsiveForce * collisionSpeed);
             playerRigidbody.constraints &= ~(RigidbodyConstraints.FreezeRotationY);
         }
