@@ -12,7 +12,7 @@ public struct TimeStep
     public float angDrag;
     public Vector3 velocity;
     public Vector3 angVelocity;
-    
+
     public TimeStep(Vector3 position, Quaternion rotation, float drag, float angDrag, Vector3 velocity, Vector3 angVelocity)
     {
         this.position = position;
@@ -29,54 +29,47 @@ public class BadTimeMachine : MonoBehaviour
     public bool forwardsInTime;
     public bool backwardsInTime;
 
+    bool recordCube = true;
+    Rigidbody myRigidbody;
+
     public List<TimeStep> timeLine;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         timeLine = new List<TimeStep>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.R))
-        {
-            forwardsInTime = false;
-            backwardsInTime = true;
-            //Debug.Log("Backwards in time!");
-        }
-        else
-        {
-            forwardsInTime = true;
-            backwardsInTime = false;
-        }
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        Rigidbody myRigidbody = GetComponent<Rigidbody>();
-        
-        if (forwardsInTime)
+        if (recordCube)
         {
             timeLine.Add((new TimeStep(
-                transform.position, 
+                transform.position,
                 transform.rotation,
                 myRigidbody.drag,
                 myRigidbody.angularDrag,
                 myRigidbody.velocity,
                 myRigidbody.angularVelocity
             )));
-        } else if (backwardsInTime && timeLine.Count > 0)
+        }
+    }
+
+    public void RewindFixedTimeFrame()
+    {
+        recordCube = false;
+        if (timeLine.Count > 0)
         {
             var lastStep = timeLine[timeLine.Count - 1];
             transform.position = lastStep.position;
             transform.rotation = lastStep.rotation;
+
             myRigidbody.drag = lastStep.drag;
             myRigidbody.angularDrag = lastStep.angDrag;
             myRigidbody.velocity = lastStep.velocity;
             myRigidbody.angularVelocity = lastStep.angVelocity;
-            timeLine.RemoveAt(timeLine.Count-1);
+            timeLine.RemoveAt(timeLine.Count - 1);
         }
     }
 }
