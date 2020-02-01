@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,9 +42,10 @@ public class BTMProjectile : MonoBehaviour
         if (lifetime < 0)
             gameObject.SetActive(false);
     }
-    
-    public void OnCollisionEnter(Collision other)
+
+    public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Trigger!");
         Explosion explosion = other.gameObject.GetComponent<Explosion>();
         if(explosion != null)
         {
