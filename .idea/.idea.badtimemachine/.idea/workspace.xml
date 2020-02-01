@@ -15,7 +15,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/BTMProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AmISleepingTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RewindSphere.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/BadTimeMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RewindablesManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -24,7 +27,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/BadTimeMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/AmISleepingTest.cs" />
+        <option value="$PROJECT_DIR$/Assets/BTMProjectile.cs" />
         <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Controller.cs" />
       </list>
     </option>
   </component>
@@ -74,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580502182819</updated>
       <workItem from="1580502187175" duration="2723000" />
-      <workItem from="1580508579797" duration="5111000" />
+      <workItem from="1580508579797" duration="8114000" />
     </task>
     <servers />
   </component>

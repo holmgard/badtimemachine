@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -31,7 +32,6 @@ public class Controller : MonoBehaviour
     void Start()
     {
         rotation = transform.localRotation;
-
         _renderer.material.color = playerColor;
     }
 
@@ -44,7 +44,7 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetButtonDown($"Fire{playerNumber}") && !projectile.gameObject.activeInHierarchy) {
             projectile.gameObject.SetActive(true);
-            //projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
+            projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
         }
 
         float x = Input.GetAxis($"Horizontal{playerNumber}") * speed;

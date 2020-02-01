@@ -42,14 +42,17 @@ public class BadTimeMachine : MonoBehaviour
     {
         if (recordCube)
         {
-            timeLine.Add((new TimeStep(
-                transform.position,
-                transform.rotation,
-                myRigidbody.drag,
-                myRigidbody.angularDrag,
-                myRigidbody.velocity,
-                myRigidbody.angularVelocity
-            )));
+            if (!myRigidbody.IsSleeping())
+            {
+                timeLine.Add((new TimeStep(
+                    transform.position,
+                    transform.rotation,
+                    myRigidbody.drag,
+                    myRigidbody.angularDrag,
+                    myRigidbody.velocity,
+                    myRigidbody.angularVelocity
+                )));    
+            }
         }
     }
 

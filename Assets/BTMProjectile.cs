@@ -18,13 +18,7 @@ public class BTMProjectile : MonoBehaviour
     private BadTimeMachine _btm;
     private Rigidbody _body;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    /*public void Spawn(Vector3 pos, Vector3 dir, bool forward) {
+    public void Spawn(Vector3 pos, Vector3 dir, bool forward) {
         _btm = GetComponent<BadTimeMachine>();
         _body = GetComponent<Rigidbody>();
 
@@ -32,12 +26,12 @@ public class BTMProjectile : MonoBehaviour
 
         transform.position = pos;
 
-        _btm.forwardsInTime = forward;
-        _btm.backwardsInTime = !forward;
+        //_btm.forwardsInTime = forward;
+        //_btm.backwardsInTime = !forward;
         _body.velocity = dir * speed;
 
         lifetime = lifespan;
-    }*/
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,5 +40,14 @@ public class BTMProjectile : MonoBehaviour
 
         if (lifetime < 0)
             gameObject.SetActive(false);
+    }
+    
+    public void OnCollisionEnter(Collision other)
+    {
+        Explosion explosion = other.gameObject.GetComponent<Explosion>();
+        if(explosion != null)
+        {
+            explosion.Explode();
+        }
     }
 }
