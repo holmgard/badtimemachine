@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraController : MonoBehaviour
 {
     public float verticalMovementSpeed;
@@ -18,6 +19,7 @@ public class CameraController : MonoBehaviour
     public float cameraPercPos;
 
     private Controller _playerController;
+    private Camera _camera;
     private int _playerNumber;
     private float _heightExtent;
     private float _distanceExtent;
@@ -27,6 +29,14 @@ public class CameraController : MonoBehaviour
     {
         _playerController = GetComponentInParent<Controller>();
         _playerNumber = _playerController.playerNumber;
+
+        _camera = GetComponent<Camera>();
+        _camera.rect = new Rect {
+            xMin = (_playerNumber - 1)  / 2,
+            xMax = (_playerNumber - 1)  / 2 + 0.5f,
+            yMin = 0,
+            yMax = 1
+        };
     }
 
     // Update is called once per frame
