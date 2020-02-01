@@ -44,7 +44,7 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetButtonDown($"Fire{playerNumber}") && !projectile.gameObject.activeInHierarchy) {
             projectile.gameObject.SetActive(true);
-            projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
+            //projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
         }
 
         float x = Input.GetAxis($"Horizontal{playerNumber}") * speed;
