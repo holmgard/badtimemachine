@@ -25,7 +25,9 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
 
             Vector3 repulsiveForce = transform.position - averageContact;
             repulsiveForce.y = 0.0F;
+            playerRigidbody.constraints |= RigidbodyConstraints.FreezeRotationY;
             playerRigidbody.AddForce(repulsiveForce * 10.0F, ForceMode.Impulse);
+            playerRigidbody.constraints &= ~(RigidbodyConstraints.FreezeRotationY);
         }
     }
 }
