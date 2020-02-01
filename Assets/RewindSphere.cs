@@ -10,23 +10,27 @@ public class RewindSphere : MonoBehaviour
     private bool rewinding = false;
     HashSet<int> rewindAffectedCubes = new HashSet<int>();
 
+    int playerNumber;
+
     private void Update()
     {
-        if (Input.GetButtonDown("Rewind"))
+        if (Input.GetButtonDown($"Rewind{playerNumber}"))
         {
             rewinding = true;
         }
-        else if (Input.GetButtonUp("Rewind"))
+        else if (Input.GetButtonUp($"Rewind{playerNumber}"))
         {
             rewinding = false;
             foreach (var rewindAffectedCube in rewindAffectedCubes)
             {
                 rewindablesManager.GetBadTimeMachine(rewindAffectedCube).StartRecording();
             }
+            rewindAffectedCubes.Clear();
         }
     }
 
     void Start() {
+        playerNumber = gameObject.GetComponent<Controller>().playerNumber;
         rewindablesManager = RewindablesManager.Instance;
     }
     void FixedUpdate()

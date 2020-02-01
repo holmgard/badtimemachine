@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6828380332295638114}
   - component: {fileID: 6828380332295638127}
-  - component: {fileID: 6828380332295638124}
   - component: {fileID: 6828380332295638125}
   - component: {fileID: 6828380332295638115}
   - component: {fileID: 6828380332295638112}
@@ -54,19 +53,6 @@ MonoBehaviour:
   lifespan: 5
   direction: {x: 0, y: 0, z: 0}
   lifetime: 0
---- !u!114 &6828380332295638124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6828380332295638119}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f622b2fca80b83542b68cab3888903cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sphereRadius: 5
 --- !u!114 &6828380332295638125
 MonoBehaviour:
   m_ObjectHideFlags: 0
