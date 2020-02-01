@@ -23,6 +23,7 @@ public class RewindSphere : MonoBehaviour
             {
                 rewindablesManager.GetBadTimeMachine(rewindAffectedCube).StartRecording();
             }
+            rewindAffectedCubes.Clear();
         }
     }
 
