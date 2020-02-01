@@ -14,18 +14,24 @@ public class Controller : MonoBehaviour
     public int playerNumber;
     public Color playerColor;
 
+    [Header("Refs")]
+    public BTMProjectile projectile;
+    public Transform cameraTarget;
+
     private Rigidbody _body;
     private Renderer _renderer;
+    private Camera _camera;
 
     void Awake() {
         _body = GetComponent<Rigidbody>();
+        _renderer = GetComponent<Renderer>();
+        _camera = GetComponentInChildren<Camera>();
     }
     // Start is called before the first frame update
     void Start()
     {
         rotation = transform.localRotation;
 
-        _renderer = GetComponent<Renderer>();
         _renderer.material.color = playerColor;
     }
 
@@ -36,6 +42,11 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown($"Fire{playerNumber}") && !projectile.gameObject.activeInHierarchy) {
+            projectile.gameObject.SetActive(true);
+            projectile.Spawn(transform.position, cameraTarget.position - _camera.transform.position, true);
+        }
+
         float x = Input.GetAxis($"Horizontal{playerNumber}") * speed;
         float y = Input.GetAxis($"Vertical{playerNumber}") * speed;
         velocity = new Vector3(
@@ -58,3 +69,4 @@ public class Controller : MonoBehaviour
         
     }
 }
+

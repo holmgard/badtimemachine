@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RewindSphere : MonoBehaviour
 {
-    public RewindablesManager rewindablesManager;
+    private RewindablesManager rewindablesManager;
     public float sphereRadius = 5.0F;
 
     private bool rewinding = false;
@@ -26,7 +26,10 @@ public class RewindSphere : MonoBehaviour
         }
     }
 
-    void FixedUpdate() // TODO subscribe cubes to button events
+    void Start() {
+        rewindablesManager = RewindablesManager.Instance;
+    }
+    void FixedUpdate()
     {
         if (rewinding)
         {
