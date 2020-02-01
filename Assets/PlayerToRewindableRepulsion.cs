@@ -22,10 +22,10 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
                 averageContact += contact.point;
             }
             averageContact /= collision.contactCount;
-            averageContact.y = 0.0F;
 
             Vector3 repulsiveForce = transform.position - averageContact;
-            playerRigidbody.AddForce(repulsiveForce * 10.0F, ForceMode.Impulse);
+            repulsiveForce.y = 0.0F;
+            playerRigidbody.AddForce(repulsiveForce * 100.0F, ForceMode.Impulse);
             Debug.Log("Collided");
         }
     }
