@@ -5,6 +5,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="BadTimeMachine.cs" t="Include" />
+        <e p="CameraController.cs" t="Include" />
         <e p="Controller.cs" t="Include" />
         <e p="Explosion.cs" t="Include" />
         <e p="RewindSphere.cs" t="Include" />
