@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &727619145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727619146}
+  m_Layer: 0
+  m_Name: CamTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &727619146
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727619145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.89, z: 1.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9174845707423994864}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9174845705727362323
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9174845705727362334}
   - component: {fileID: 9174845705727362321}
+  - component: {fileID: 315355144511357225}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -24,13 +55,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9174845705727362323}
-  m_LocalRotation: {x: 0.11137923, y: -0, z: -0, w: 0.993778}
-  m_LocalPosition: {x: 0, y: 2.6400003, z: -4.87}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9174845707423994864}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 12.790001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &9174845705727362321
 Camera:
   m_ObjectHideFlags: 0
@@ -52,7 +83,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -74,6 +105,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &315355144511357225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174845705727362323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fac8002559d0d145827ccb03ef979ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalMovementSpeed: 0.1
+  minDistance: -1.99
+  maxDistance: -5
+  lowerBound: -0.39
+  upperBound: 2.04
+  target: {fileID: 727619146}
+  cameraPercPos: 0
 --- !u!1 &9174845707423994870
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9174845705727362334}
+  - {fileID: 727619146}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,11 +173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009a2640fbe9dae4eb98230978590583, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 0
   speed: 3
   rotSpeed: 1
+  playerNumber: 2
+  playerColor: {r: 0.12941177, g: 0.5882353, b: 0.9529412, a: 1}
   velocity: {x: 0, y: 0, z: 0}
-  cameraIn: 0
+  cameraX: 0
   rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &9174845707423994868
 Rigidbody:
