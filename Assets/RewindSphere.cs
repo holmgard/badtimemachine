@@ -5,16 +5,50 @@ using UnityEngine;
 public class RewindSphere : MonoBehaviour
 {
     public RewindablesManager rewindablesManager;
+    public float sphereRadius = 5.0F;
 
-    void FixedUpdate()
+    private bool rewinding = false;
+    HashSet<int> rewindAffectedCubes = new HashSet<int>();
+
+    private void Update()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 5.0F, 0x0100); // 0x0100 Stands for layer 8
-
-        foreach (var collider in colliders)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            int temp = collider.gameObject.GetInstanceID();
-            BadTimeMachine badTimeMachine = rewindablesManager.GetBadTimeMachine(temp);
-            badTimeMachine.RewindFixedTimeFrame();
+            rewinding = true;
         }
+        else if (Input.GetKeyUp(KeyCode.R))
+        {
+            rewinding = false;
+            foreach (var rewindAffectedCube in rewindAffectedCubes)
+            {
+                rewindablesManager.GetBadTimeMachine(rewindAffectedCube).StartRecording();
+            }
+        }
+    }
+
+    void FixedUpdate() // TODO subscribe cubes to button events
+    {
+        if (rewinding)
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, sphereRadius, 0x0100); // 0x0100 Stands for layer 8
+
+            foreach (var collider in colliders)
+            {
+                int id = collider.gameObject.GetInstanceID();
+                if (!rewindAffectedCubes.Contains(id))
+                {
+                    rewindAffectedCubes.Add(id);
+                }
+                BadTimeMachine badTimeMachine = rewindablesManager.GetBadTimeMachine(id);
+                badTimeMachine.StopRecording();
+                badTimeMachine.RewindFixedTimeFrame();
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, sphereRadius);
     }
 }

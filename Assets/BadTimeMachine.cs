@@ -26,9 +26,6 @@ public struct TimeStep
 
 public class BadTimeMachine : MonoBehaviour
 {
-    public bool forwardsInTime;
-    public bool backwardsInTime;
-
     bool recordCube = true;
     Rigidbody myRigidbody;
 
@@ -71,5 +68,15 @@ public class BadTimeMachine : MonoBehaviour
             myRigidbody.angularVelocity = lastStep.angVelocity;
             timeLine.RemoveAt(timeLine.Count - 1);
         }
+    }
+
+    public void StartRecording()
+    {
+        recordCube = true;
+    }
+
+    public void StopRecording()
+    {
+        recordCube = false;
     }
 }
