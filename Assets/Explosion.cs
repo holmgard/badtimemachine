@@ -17,7 +17,7 @@ public class Explosion : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-                Debug.Log("Exploding!");
+                //Debug.Log("Exploding!");
                 Explode();
         }
     }
