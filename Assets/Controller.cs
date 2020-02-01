@@ -63,10 +63,7 @@ public class Controller : MonoBehaviour
         }
             
         velocity = _body.rotation * velocity;
-        velocity.y = _body.velocity.y;
-
-        _body.velocity = velocity;
-        
+        _body.AddForce(velocity * 5);        
     }
 }
 

@@ -25,8 +25,7 @@ public class PlayerToRewindableRepulsion : MonoBehaviour
 
             Vector3 repulsiveForce = transform.position - averageContact;
             repulsiveForce.y = 0.0F;
-            playerRigidbody.AddForce(repulsiveForce * 100.0F, ForceMode.Impulse);
-            Debug.Log("Collided");
+            playerRigidbody.AddForce(repulsiveForce * 10.0F, ForceMode.Impulse);
         }
     }
 }
