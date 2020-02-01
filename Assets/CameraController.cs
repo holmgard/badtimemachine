@@ -31,12 +31,7 @@ public class CameraController : MonoBehaviour
         _playerNumber = _playerController.playerNumber;
 
         _camera = GetComponent<Camera>();
-        _camera.rect = new Rect {
-            xMin = (_playerNumber - 1)  / 2,
-            xMax = (_playerNumber - 1)  / 2 + 0.5f,
-            yMin = 0,
-            yMax = 1
-        };
+        _camera.rect = new Rect (0.5f * (_playerNumber - 1), 0, 0.5f * _playerNumber, 1);
     }
 
     // Update is called once per frame
