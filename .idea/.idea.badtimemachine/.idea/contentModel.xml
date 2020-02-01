@@ -14,6 +14,7 @@
         <e p="PlayerToRewindableRepulsion.cs" t="Include" />
         <e p="RewindablesManager.cs" t="Include" />
         <e p="RewindSphere.cs" t="Include" />
+        <e p="ScoreCube.cs" t="Include" />
       </e>
       <e p="badtimemachine.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
