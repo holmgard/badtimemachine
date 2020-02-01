@@ -66,11 +66,12 @@ public class Controller : MonoBehaviour
         }
             
         velocity = _body.rotation * velocity;
+
         _body.AddForce(velocity);
-        if (_body.velocity.magnitude > speed)
-        {
-            _body.velocity = _body.velocity.normalized * speed;
-        }
+        //if (!(_body.velocity.magnitude > speed))
+        //{
+        //    _body.AddForce(velocity);
+        //}
     }
 
     void FireProjectile()

@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 9174845707423994869}
   - component: {fileID: 9174845707423994866}
   - component: {fileID: 9174845707423994867}
+  - component: {fileID: 1679137346502455459}
+  - component: {fileID: 8845709232493625575}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -262,3 +264,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9174845707423994870}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1679137346502455459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174845707423994870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd19461c1ea947c4e9f7d4026470a58e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewindablesManager: {fileID: 0}
+--- !u!114 &8845709232493625575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174845707423994870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f622b2fca80b83542b68cab3888903cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereRadius: 5
