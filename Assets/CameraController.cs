@@ -11,8 +11,11 @@ public class CameraController : MonoBehaviour
     public float minDistance;
     public float maxDistance;
 
-    public float lowerBound;
-    public float upperBound;
+    public float minHeight;
+    public float maxHeight;
+
+    public float xSwizzling = 1;
+    public float swizzlingSpeed = 0.1f;
 
     public Transform target;
 
@@ -46,13 +49,15 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         // TMP for testing
-        _heightExtent = upperBound - lowerBound;
+        _heightExtent = maxHeight - minHeight;
         _distanceExtent = maxDistance - minDistance;
 
         cameraPercPos = Mathf.Clamp01(cameraPercPos + Input.GetAxis($"CameraVer{_playerNumber}") * verticalMovementSpeed);
+        var camXaxis = Input.GetAxis($"CameraHor{_playerNumber}");
 
         var newPos = transform.localPosition;
-        newPos.y = Mathf.Lerp(lowerBound, upperBound, cameraPercPos);
+        newPos.x = Mathf.Clamp(newPos.x + swizzlingSpeed * camXaxis, -xSwizzling, xSwizzling);
+        newPos.y = Mathf.Lerp(minHeight, maxHeight, cameraPercPos);
         newPos.z = Mathf.Lerp(minDistance, maxDistance, cameraPercPos);
 
         transform.localPosition = newPos;
