@@ -59,7 +59,7 @@ public class BadTimeMachine : MonoBehaviour
     public void RewindFixedTimeFrame()
     {
         recordCube = false;
-        if (timeLine.Count > 0)
+        if (timeLine.Count > 1)
         {
             var lastStep = timeLine[timeLine.Count - 1];
             transform.position = lastStep.position;
@@ -70,6 +70,17 @@ public class BadTimeMachine : MonoBehaviour
             myRigidbody.velocity = lastStep.velocity;
             myRigidbody.angularVelocity = lastStep.angVelocity;
             timeLine.RemoveAt(timeLine.Count - 1);
+        }
+        else if (timeLine.Count == 1)
+        {
+            var lastStep = timeLine[0];
+            transform.position = lastStep.position;
+            transform.rotation = lastStep.rotation;
+
+            myRigidbody.drag = lastStep.drag;
+            myRigidbody.angularDrag = lastStep.angDrag;
+            myRigidbody.velocity = lastStep.velocity;
+            myRigidbody.angularVelocity = lastStep.angVelocity;
         }
     }
 
