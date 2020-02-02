@@ -456,13 +456,14 @@ GameObject:
   - component: {fileID: 101660229}
   - component: {fileID: 101660228}
   - component: {fileID: 101660227}
+  - component: {fileID: 101660230}
   m_Layer: 0
   m_Name: IsometricCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &101660227
 AudioListener:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -31
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -521,13 +522,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101660226}
-  m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
+  m_LocalRotation: {x: 0.35355338, y: 0.35355338, z: -0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 23.8, y: 33.4, z: -25.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 45, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+--- !u!114 &101660230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101660226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4144a193166e54c51b4a3025f99eaf58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &111467389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1637,7 +1650,7 @@ PrefabInstance:
     - target: {fileID: 9174845705727362323, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174845707423994864, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
@@ -1846,7 +1859,7 @@ PrefabInstance:
     - target: {fileID: 9174845705727362323, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9174845707423994864, guid: 8b006394dd492a64794750f9f061db77,
         type: 3}
