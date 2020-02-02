@@ -10,6 +10,9 @@ public class RewindSphere : MonoBehaviour
     private bool rewinding = false;
     HashSet<int> rewindAffectedCubes = new HashSet<int>();
 
+    [Header("Debug controls")]
+    public bool debugSphere = true;
+
     int playerNumber;
 
     private void Update()
@@ -56,7 +59,9 @@ public class RewindSphere : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(transform.position, sphereRadius);
+        if (debugSphere) {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawSphere(transform.position, sphereRadius);
+        }
     }
 }
